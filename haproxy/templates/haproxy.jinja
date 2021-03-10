@@ -85,10 +85,10 @@ global
   {%- endif %}
 {%- endif %}
 
-{%- for id, userlist in salt['pillar.get']('haproxy:userlists',  {})|dictsort %}
 #------------------
 # Global Userlists
 #------------------
+{%- for id, userlist in salt['pillar.get']('haproxy:userlists',  {})|dictsort %}
 userlist {{ id }}
   {%- for id, entry in userlist|dictsort %}
   {%- if id == "groups" %}
